@@ -3,14 +3,12 @@
 module Service =
 
   open System
-  open System.IO
-  open System.Text
-  open System.Globalization
   open System.ServiceModel
   open System.ServiceModel.Web
   open System.ServiceModel.Activation
 
-  open Contracts
+  open Contract
+  open Infrastruture
 
   [<AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)>]
   type GreeterWcfService =
@@ -30,9 +28,9 @@ module Service =
 
         let clientContext = OperationContext.Current
         let handler = new EventHandler(fun obj args ->
-          if stream != null
-          then stream.Dispose()
-          else ()
+          match stream with
+            null -> stream.Dispose()
+            | _ -> ()
         )
         clientContext.OperationCompleted.AddHandler(handler)
 

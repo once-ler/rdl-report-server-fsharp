@@ -46,12 +46,13 @@
     <Reference Include="RdlEngine">
       <HintPath>..\..\My-FyiReporting\RdlEngine\bin\Release\RdlEngine.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
+    <Compile Include="RdlReport.fs" />
     <Compile Include="IGreeterWcfService.fs" />
     <Compile Include="GreeterWcfService.fs" />
-    <Compile Include="RdlReport.fs" />
     <Compile Include="Program.fs" />
     <None Include="packages.config" />
   </ItemGroup>

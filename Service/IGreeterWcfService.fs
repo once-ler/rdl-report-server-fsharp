@@ -4,7 +4,7 @@ open System.IO;
 open System.ServiceModel;
 open System.ServiceModel.Web;
 
-module Contracts =
+module Contract =
 
   [<ServiceContract>]
   type IGreeterWcfService =

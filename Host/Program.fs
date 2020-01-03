@@ -4,7 +4,8 @@ module Host =
   open System
   open System.ServiceModel
   open System.ServiceModel.Web
-  open Service.GreeterWcfService
+  open Contract
+  open Service
 
   [<EntryPoint>]
   let main argv =
@@ -14,7 +15,7 @@ module Host =
     let webAddress = new Uri("http://localhost:8081")
     let host = new WebServiceHost(typeof<GreeterWcfService>)
 
-    host.AddServiceEndpoint(typeof<IGreeterWcfService>, webBinding, webAddress)
+    let serviceEndpoint = host.AddServiceEndpoint(typeof<IGreeterWcfService>, webBinding, webAddress)
     host.Open()
 
     printfn("Type [CR] to stop...")

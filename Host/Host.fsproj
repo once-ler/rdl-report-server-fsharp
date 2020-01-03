@@ -50,5 +50,11 @@
     <Compile Include="Program.fs" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Service\Service.fsproj">
+      <Project>{8EAB0A7F-0FED-44C0-800C-0814B459FA8F}</Project>
+      <Name>Service</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(FSharpTargetsPath)" />
 </Project>
