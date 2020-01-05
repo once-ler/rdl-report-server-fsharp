@@ -6,7 +6,7 @@ module Infrastruture =
   open System.IO
   open fyiReporting.RDL
 
-  type RdlReport =
+  type RdlReport() =
     member private this.getSource file =
       let mutable fs: StreamReader = null
       let mutable prog: string = null
@@ -67,5 +67,3 @@ module Infrastruture =
       report.RunRender(sg, OutputPresentationType.HTML)
 
       sg.GetStream()
-
-    new() = RdlReport()

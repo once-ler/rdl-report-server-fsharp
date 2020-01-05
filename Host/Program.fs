@@ -16,6 +16,7 @@ module Host =
     let host = new WebServiceHost(typeof<GreeterWcfService>)
 
     let serviceEndpoint = host.AddServiceEndpoint(typeof<IGreeterWcfService>, webBinding, webAddress)
+
     host.Open()
 
     printfn("Type [CR] to stop...")

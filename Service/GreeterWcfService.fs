@@ -10,8 +10,9 @@ module Service =
   open Contract
   open Infrastruture
 
+  [<ServiceBehavior(ConcurrencyMode=ConcurrencyMode.Multiple, InstanceContextMode = InstanceContextMode.Single)>]   
   [<AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)>]
-  type GreeterWcfService =
+  type GreeterWcfService() =
     interface IGreeterWcfService with
       member this.Greet name =
         let headers = WebOperationContext.Current.IncomingRequest.Headers
