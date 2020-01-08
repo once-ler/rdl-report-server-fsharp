@@ -4,6 +4,7 @@ module Infrastruture =
 
   open System
   open System.IO
+  (*
   open fyiReporting.RDL
 
   type RdlReport() =
@@ -67,3 +68,4 @@ module Infrastruture =
       report.RunRender(sg, OutputPresentationType.HTML)
 
       sg.GetStream()
+*)

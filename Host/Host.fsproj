@@ -44,12 +44,6 @@
     </Reference>
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Web" />
-    <Reference Include="iTextSharp">
-      <HintPath>..\packages\iTextSharp-LGPL.4.1.6\lib\iTextSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="RdlEngine">
-      <HintPath>..\..\My-FyiReporting\RdlEngine\bin\Release\RdlEngine.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
