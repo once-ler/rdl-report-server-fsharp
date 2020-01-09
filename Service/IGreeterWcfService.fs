@@ -14,4 +14,4 @@ module Contract =
 
     [<OperationContract>]
     [<WebGet(ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare, UriTemplate = "report/{name}")>]
-    abstract member GetReport: resportName: string -> Stream  
+    abstract member GetReport: name: string -> Stream  

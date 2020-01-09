@@ -4,7 +4,7 @@ module Infrastruture =
 
   open System
   open System.IO
-  (*
+
   open fyiReporting.RDL
 
   type RdlReport() =
@@ -12,7 +12,7 @@ module Infrastruture =
       let mutable fs: StreamReader = null
       let mutable prog: string = null
       let workingDirectory = Environment.CurrentDirectory
-
+      printfn "%s" workingDirectory
       let read = 
         try
           fs <- new StreamReader(workingDirectory + "/" + file)
@@ -68,4 +68,3 @@ module Infrastruture =
       report.RunRender(sg, OutputPresentationType.HTML)
 
       sg.GetStream()
-*)

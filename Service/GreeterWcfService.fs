@@ -22,8 +22,7 @@ module Service =
 
         "Hello, " + name
 
-      member this.GetReport reportName = null
-      (*
+      member this.GetReport name =
         let rrp = new RdlReport()
 
         use stream = rrp.render("Reports/Employees.rdl")
@@ -37,4 +36,4 @@ module Service =
         clientContext.OperationCompleted.AddHandler(handler)
 
         stream
-        *)
+      
