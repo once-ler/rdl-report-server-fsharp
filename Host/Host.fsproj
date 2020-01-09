@@ -35,15 +35,13 @@
     <FSharpTargetsPath>$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets</FSharpTargetsPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Debug</OutputPath>
-    <DefineConstants></DefineConstants>
+    <IntermediateOutputPath>obj\AnyCPU\Debug</IntermediateOutputPath>
+    <OutputPath>bin\AnyCPU\Debug</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release</OutputPath>
-    <DefineConstants></DefineConstants>
-    <PlatformTarget></PlatformTarget>
+    <IntermediateOutputPath>obj\AnyCPU\Release</IntermediateOutputPath>
+    <OutputPath>bin\AnyCPU\Release</OutputPath>
+    <PlatformTarget>anycpu</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
