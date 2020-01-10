@@ -4,6 +4,7 @@ module Infrastruture =
 
   open System
   open System.IO
+  open System.Text
 
   open fyiReporting.RDL
 
@@ -67,4 +68,8 @@ module Infrastruture =
       use sg = new MemoryStreamGen()
       report.RunRender(sg, OutputPresentationType.HTML)
 
-      sg.GetStream()
+      let s = sg.GetText()
+      /// let s1 = new MemoryStream(Encoding.UTF8.GetBytes(s))
+      /// sg.GetStream()
+      s
+      

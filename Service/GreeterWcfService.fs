@@ -25,6 +25,7 @@ module Service =
       member this.GetReport name =
         let rrp = new RdlReport()
 
+        (*
         use stream = rrp.render("Reports/Employees.rdl")
 
         let clientContext = OperationContext.Current
@@ -34,6 +35,9 @@ module Service =
             | _ -> ()
         )
         clientContext.OperationCompleted.AddHandler(handler)
+        let b = WebOperationContext.Current.OutgoingResponse.ContentType = "text/html"
 
         stream
-      
+        *)
+        let str = rrp.render("Reports/Employees.rdl")
+        str
