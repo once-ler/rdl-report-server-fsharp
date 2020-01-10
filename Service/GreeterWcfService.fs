@@ -6,6 +6,8 @@ module Service =
   open System.ServiceModel
   open System.ServiceModel.Web
   open System.ServiceModel.Activation
+  open System.Text
+  open System.IO
 
   open Contract
   open Infrastruture
@@ -23,21 +25,21 @@ module Service =
         "Hello, " + name
 
       member this.GetReport name =
+        WebOperationContext.Current.OutgoingResponse.ContentType <- "text/html"
+
         let rrp = new RdlReport()
 
-        (*
-        use stream = rrp.render("Reports/Employees.rdl")
+        let str = rrp.render("Reports/Employees.rdl")
+        let bytes = Encoding.UTF8.GetBytes str
+        let stream = new MemoryStream(bytes)
 
         let clientContext = OperationContext.Current
         let handler = new EventHandler(fun obj args ->
           match stream with
-            null -> stream.Dispose()
-            | _ -> ()
+            null -> () 
+            | _ -> stream.Dispose()
         )
         clientContext.OperationCompleted.AddHandler(handler)
-        let b = WebOperationContext.Current.OutgoingResponse.ContentType = "text/html"
 
-        stream
-        *)
-        let str = rrp.render("Reports/Employees.rdl")
-        str
+        /// upcast
+        stream :> Stream

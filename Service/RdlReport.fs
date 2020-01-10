@@ -68,8 +68,4 @@ module Infrastruture =
       use sg = new MemoryStreamGen()
       report.RunRender(sg, OutputPresentationType.HTML)
 
-      let s = sg.GetText()
-      /// let s1 = new MemoryStream(Encoding.UTF8.GetBytes(s))
-      /// sg.GetStream()
-      s
-      
+      sg.GetText()
